@@ -13,6 +13,10 @@ if __name__ == '__main__':
         print('未获取到COOKIE变量') 
         cookies = []
         exit(0)
+        
+    # Clean cookies by removing whitespace and newlines
+    cookies = [cookie.strip() for cookie in cookies if cookie.strip()]
+    
     url= "https://glados.rocks/api/user/checkin"
     url2= "https://glados.rocks/api/user/status"
     referer = 'https://glados.rocks/console/checkin'
